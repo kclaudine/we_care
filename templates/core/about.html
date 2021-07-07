@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    {% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+</head>
+<body>
+    {% block content %}
+    <br>
+    <br>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="300"><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+                    <h3 style="text-align: center;font-weight: bold; color:black;">Welcome to <span style="text-align: center;font-weight: bold;color: #45ac8b;font-family: 'RocknRoll One', sans-serif;"> HEALTH CARE</span></h3><br>
+                    <p style="text-align: justify; font-size: 17px;">Health care is the maintenance or improvement of health via the prevention, diagnosis, treatment, recovery, or cure of disease, illness, injury, and other physical and mental impairments in people. Health care is delivered by health professionals and allied health fields.
+                        Health care is delivered by health professionals and allied health fields. Medicine, dentistry, pharmacy, midwifery, nursing, optometry, audiology, psychology, occupational therapy, physical therapy, athletic training and other health professions are all part of health care. It includes work done in providing primary care, secondary care, and tertiary care, as well as in public health.</p>
+                </div>
+                <br> <br>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="600">
+                    <img src="https://res.cloudinary.com/zilfa/image/upload/v1613650507/blackwomendocs_pg3wmg.jpg"
+                        height="350" alt="">
+                </div>
+            </div> <br><br>
+            <hr>
+        </div>
+    </section>
+
+
+    {% endblock %}
+
+</body>
+</html>

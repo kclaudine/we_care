@@ -3,47 +3,70 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
+
 <style>
     .image {
         max-width: 100%;
         max-height: 100%;
     }
 </style>
-<div class="container">
-    <div class="row mb-5">
-        <div class="col-md-8" style="height:400px;
-        overflow:auto;">
-            <div class="row">
-                <div class="col-12 border"  data-toggle="modal" data-target=".1" >
-                    <img class="image"  width="100%" height="300vh" src="{{house.image.url}}">
-                </div>
-                <div data-toggle="modal" data-target=".2" class="col-md-6 border"><img class="image" src="{{house.image1.url}}"></div>
-                <div data-toggle="modal" data-target=".3" class="col-md-6 border "><img class="image" src="{{house.image2.url}}"></div>
-                <div data-toggle="modal" data-target=".4" class="col-md-6 border"><img class="image" src="{{house.image3.url}}"></div>
-                <div data-toggle="modal" data-target=".5" class="col-md-6 border "><img class="image" src="{{house.image4.url}}"></div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <a class="navbar-brand ml-2" href="/"><img width=100px src="{% static 'lo.png' %}" alt=""></a>
-            <hr>
-            <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{house.district}},{{house.sector}}</p>
-            <div class="d-flex">
-                <p class="card-text mr-4"><i class="fas fa-bed"></i> {{house.beds}} bedrooms</p>
-                <p class="card-text"><i class="fas fa-bath"></i> {{house.baths}} baths</p>
-            </div>
-            <div class="d-flex">
-                <p class="card-text mr-4">{{house.action}}</p>
-                <p class="card-text">for {{house.price}} Rwf</p>
-            </div>
-            <hr>
-            <h4>description</h4>
-            <p>{{house.description}}</p>
-            <hr>
-            <a class="btn btn-outline-info btn-block" data-toggle="modal" data-target=".bd-example-modal-md "
-                href="http://">Book a visit</a>
-        </div>
+
+<header style="background-color: #1b1b1b; color: rgba(255, 255, 255, 0.501);">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8 col-sm-7 text-align-right">
+        <span class="phone-icon"><i class="fa fa-phone"></i> +250-0788-304-545</span>
+
+        <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 24/7</span>
+
+        <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#"
+            style="text-decoration: none;">carezone@gmail.com</a></span>
+
+        <span class="address-icon"><i class="fa fa-map-marker-alt"></i>KN 190st 32 Kigali-Rwanda</span>
+
+      </div>
 
     </div>
+  </div><br>
+</header>
+
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <div class="jumbotron"
+        style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url('https://res-console.cloudinary.com/durylnbci/thumbnails/v1/image/upload/v1625307236/bWVkaWEvcGljaGEvYmFja2duZF9vNnRidWM=/folder_thumbnail/d184OCxoXzg4LGNfdGh1bWI=');background-size: cover; height: 40vh; background-position: center;margin-top: -0.4cm;">
+
+        <div style="margin-top: 2%;">
+            <h4 style="font-weight: bold;text-transform: uppercase;color: white;">Therapist Name: {{house.name}}
+                </span> </h4>
+        </div>
+    </div>
+
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 shadow-md">
+                <img src="{{house.image.url}}" width="100%" alt="">
+            </div>
+                <div class="col-7 shadow-lg" style="margin-left: -0.38cm;">
+                    <div style="margin-top:3%;">
+                        <p><span style="font-weight: bold;color:#45ac8b;font-size: 20px;">Therapist Name: {{house.name}} </span></p>
+                        <p style="font-size: 15px;text-transform: capitalize;"> <i class="fas fa-map-marker-alt"></i>{{house.district}}
+                        </p>
+                                <hr>
+
+                                <h5 style="font-weight: bold;color: rgb(126, 123, 123);font-size: 16px;">Overview</h5>
+                                <p style="font-size: 12px;">{{house.description}}</p>
+                                <!-- <p><i class="fas fa-envelope-open-text" style="color: #45ac8b;"></i> <span style="font-weight: bold;color: rgb(126, 123, 123);font-size: 13px;">{{single_doctor.email}}</span> &nbsp;  | &nbsp; <i class="fas fa-phone" style="color: #45ac8b;"></i> <span style="font-weight: bold;color: rgb(126, 123, 123);font-size: 13px;">{{single_doctor.phone_number}}</span></p> -->
+                                <hr>
+            <a class="btn btn-outline-info btn-block" data-toggle="modal" data-target=".bd-example-modal-md "
+                href="http://">Book a massage</a>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    <br>
 
     <iframe
         src="{{house.map}}"
@@ -110,4 +133,17 @@
       </div>
     </div>
   </div>
+
+  {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="{%static 'js/scripts.js'%}"> </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <script> 
+    {% for msg in messages %}
+       swal('{{msg }}');
+    {% endfor %}
+    </script>
+    {% endblock %}
 {% endblock %}

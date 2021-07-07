@@ -37,23 +37,19 @@ class House( models.Model):
     type    = models.CharField(max_length=800,choices=TYPE, default='House')
     description    = models.TextField(blank=True, null=True,)
     image      = models.ImageField(upload_to='contents',null=True)
-    image1      = models.ImageField(upload_to='contents',default='a.jpg')
-    image2     = models.ImageField(upload_to='contents',default='b.jpg')
-    image3     = models.ImageField(upload_to='contents',default='c.jpg')
-    image4     = models.ImageField(upload_to='contents',default='d.jpg')
+    masseuse_name=models.CharField(max_length=800, blank=True, null=True,)
     district    = models.CharField(max_length=800)
     sector    = models.CharField(max_length=800)
     map    = models.CharField(max_length=800, default='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.460324616631!2d30.10826551379186!3d-1.9699443985638305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca64fc7cb6bdd%3A0x1217fae35e7296d7!2sKK%2012%20Ave%2C%20Kigali!5e0!3m2!1sen!2srw!4v1616058045674!5m2!1sen!2srw')
     published_date = models.DateField(auto_now_add=True)
-    beds = models.PositiveIntegerField(default=0)
-    baths = models.PositiveIntegerField(default=0)
+    
     price = models.PositiveIntegerField(default=0)
     action = models.CharField(max_length=10, choices=ACTION, default='Renting')
     owner = models.ForeignKey(Profile,on_delete=models.CASCADE, related_name='Houses')
 
 
     def __str__(self):
-        return self.type
+        return self.masseuse_name
 
     class Meta:
         ordering = ["-pk"]
@@ -68,6 +64,7 @@ class Booking(models.Model):
     email = models.CharField(max_length=50, null=False)
     phone = models.CharField(max_length=100, null=False)
     booking_date   = models.DateTimeField(auto_now_add = True)
+    therapist_name = models.CharField(max_length=50, null=True)
     house = models.ForeignKey(House,on_delete=models.CASCADE, related_name='house')
 
     def __str__(self):

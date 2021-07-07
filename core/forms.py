@@ -20,9 +20,9 @@ class UpdateUserProfileForm(forms.ModelForm):
 class SellForm(forms.ModelForm):
     class Meta:
         model = House
-        fields = ['district','sector','action','map','type','beds','baths', 'image','image1','image2','image3','image4','price','description']
+        fields = ['district','sector','action','type','image','price','description']
 
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['name','email','phone']
+        fields = ['name','email','phone','therapist_name']

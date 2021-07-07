@@ -17,12 +17,19 @@
         <a class="nav-link" href="{% url 'house_rent' %}">Rent</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}">About</a>
+        <!-- <a class="nav-link" href="#ABOUT" >About</a> -->
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#CONTACT" >Contact</a>
+  </li>
+      <!-- <li class="nav-item">
         <a class="nav-link" href="{% url 'house_sell' %}">Buy</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'sell' %}">Sell</a>
-      </li>
-    </ul>
+      </li> -->
+    </ul> 
     {% if user.is_authenticated %}
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><img style="width: 40px;" class="rounded-circle" src="{{user.profile.profile.url}}" alt="">

@@ -29,7 +29,7 @@
         <div class="form-group col-md-2 mb-0">
           {{ filter.form.district|as_crispy_field }}
         </div>
-        <div class="form-group col-md-2 mb-0">
+        <!-- <div class="form-group col-md-2 mb-0">
           {{ filter.form.sector|as_crispy_field }}
         </div>
         <div class="form-group col-md-2 mb-0">
@@ -40,7 +40,7 @@
         </div>
         <div class="form-group col-md-1 mb-0">
           {{ filter.form.baths|as_crispy_field }}
-        </div>
+        </div> -->
         <div class="form-group col-md-1 mb-0">
           <button type="submit" class="btn  btn-warning" style="margin-top: 0.85cm;">Search</button>
         </div>
@@ -50,26 +50,29 @@
   
 <div class="container m-5">
   <hr>
-    <h6 class="section-title"> <b>Houses for renting</b></h6>
+    <h6 class="section-title"> <b>Our Massage Therapists</b></h6>
     <hr>
     <div class="row mb-2">
       <div class="col-md-12">
         <div class="row justify-content-center">
           {% if houses %}
           {% for pro in filter.qs %}
-          <div class="card m-2" style="width: 16rem;">
+          <div class="card m-2" style="width: 18rem;">
             <img class="card-img-top" src="{{pro.image.url}}" alt="Card image cap">
   
             <div class="card-body">
-              <p><b>{{pro.type}}</b></p>
-              <h5>{{pro.price}}Rwf</h5>
+              <!-- <p><b>{{pro.type}}</b></p> -->
+              <h5>Therapist Name:{{pro.name}}</h5>
+              <h5>Price:{{pro.price}}Rwf</h5>
               <hr>
-              <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{pro.district}},{{pro.sector}}</p>
+              <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{pro.district}}</p>
+              <!-- <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{pro.district}},{{pro.sector}}</p> -->
               <div class="d-flex">
-              <p class="card-text mr-4"><i class="fas fa-bed"></i> {{pro.beds}} bedrooms</p>
-              <p class="card-text"><i class="fas fa-bath"></i> {{pro.baths}} baths</p>
+              <!-- <p class="card-text mr-4"><i class="fas fa-bed"></i> {{pro.beds}} bedrooms</p>
+              <p class="card-text"><i class="fas fa-bath"></i> {{pro.baths}} baths</p> -->
             </div>
-                <a class="btn btn-outline-info" href="{% url 'house_details' pro.pk %}">For {{pro.action}}</a>
+                <a class="btn btn-outline-info" href="{% url 'house_details' pro.pk %}">For Booking</a>
+                <!-- <a class="btn btn-outline-info" href="{% url 'house_details' pro.pk %}">For {{pro.action}}</a> -->
             </div>
           </div>
           {% endfor %}
