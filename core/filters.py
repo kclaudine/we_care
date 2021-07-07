@@ -4,4 +4,4 @@ import django_filters
 class HouseFilter(django_filters.FilterSet):
     class Meta:
         model = House
-        fields = ['district']
+        fields = ['district','sector','type','beds','baths']

@@ -6,6 +6,8 @@ from django.contrib.auth import login, authenticate
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
+
 
 
 # Create your views here.
@@ -45,8 +47,8 @@ def profile(request, username):
 
 
 def home(request):
-    houses_r = House.objects.filter(action='Renting').order_by('-pk')[:3]
-    houses_s = House.objects.filter(action='Selling').order_by('-pk')[:3]
+    houses_r = House.objects.filter(action='Renting').order_by('-pk')[:100]
+    houses_s = House.objects.filter(action='Selling').order_by('-pk')[:100]
     
     context = {
         
@@ -67,6 +69,7 @@ def house_details(request, pk):
             booking = form.save(commit=False)
             booking.house = house
             booking.save()
+            messages.success(request, 'Your booking was successful! we will reach out to you very soon!!', extra_tags='alert')
             return redirect(request.path_info)
     else:
         form = BookingForm()

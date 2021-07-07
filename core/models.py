@@ -42,7 +42,8 @@ class House( models.Model):
     sector    = models.CharField(max_length=800)
     map    = models.CharField(max_length=800, default='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.460324616631!2d30.10826551379186!3d-1.9699443985638305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca64fc7cb6bdd%3A0x1217fae35e7296d7!2sKK%2012%20Ave%2C%20Kigali!5e0!3m2!1sen!2srw!4v1616058045674!5m2!1sen!2srw')
     published_date = models.DateField(auto_now_add=True)
-    
+    beds = models.PositiveIntegerField(default=0)
+    baths = models.PositiveIntegerField(default=0)
     price = models.PositiveIntegerField(default=0)
     action = models.CharField(max_length=10, choices=ACTION, default='Renting')
     owner = models.ForeignKey(Profile,on_delete=models.CASCADE, related_name='Houses')
