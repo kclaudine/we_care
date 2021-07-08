@@ -26,25 +26,21 @@
 </style>
 
 <div class="jumbotron text-center"
-  style="background-image:linear-gradient(rgba(26, 114, 126, 0.4), rgba(85, 87, 87, 0.1)), url('https://res.cloudinary.com/durylnbci/image/upload/c_crop,h_170,w_480/v1625307236/media/picha/backgnd_o6tbuc.jpg'); background-repeat: no-repeat; background-size: cover;height:90vh">
-  <h1 data-aos="fade-down" data-aos-duration="2000" class="jumbotron-title mt-5 ">Welcome To HealthCare Service</h1>
-  <p data-aos="fade-up" data-aos-duration="2000" class="lead text-light "> <b> We Care About Your Health</b></p>
+  style="background-image:linear-gradient(rgba(26, 114, 126, 0.4), rgba(85, 87, 87, 0.1)), url('https://res.cloudinary.com/durylnbci/image/upload/c_scale,h_245,w_441/v1625746830/media/contents/land3_i1ojk0.webp'); background-repeat: no-repeat; background-size: cover;height:110vh">
+  <h1 data-aos="fade-down" data-aos-duration="2000" class="jumbotron-title mt-5 ">Massage Therapy</h1>
+  <p data-aos="fade-up" data-aos-duration="2000" class="lead text-light "> <b> Take a litle time for you, reflesh and relax.</b></p>
 
   <p class="text-light lead mt-5"> <b> Start your search </b> </p>
-  <div data-aos="zoom-out" data-aos-duration="2000" class="row justify-content-center">
-    <div class="col-md-6">
-      <form class="navbar-form" role="search" action="{% url 'search' %}">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Eg: house or apartment" name="house">
-          <div class="input-group-btn">
-            <button class="btn btn-warning text-light" type="submit"><i class="fas fa-search"></i></button>
-          </div>
-        </div>
-      </form>
-    </div>
+  <div > 
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <button type="button" class="btn btn-outline-secondary" style="border-radius: 24px;" ><a class="nav-link" href="{% url 'house_rent' %}">Search Your Therapist By District Here</a></button> 
+      </li>
+    </ul>
   </div>
 
 </div>
+
 
 <!-- DEPARTMENTS -->
 
