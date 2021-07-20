@@ -61,6 +61,7 @@ def about(request):
     return render(request, 'core/about.html')
 
 
+
 def house_details(request, pk):
     house = House.objects.get(pk = pk)
     if request.method == 'POST':

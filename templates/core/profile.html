@@ -49,26 +49,34 @@
                 <hr>
                 <div class="row">
                     {% for pro in houses %}
-                    <div class="card cards m-2" style="width: 20rem;">
-                        <img class="card-img-top" src="{{pro.image.url}}" alt="Card image cap">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card mb-4 shadow-lg">
+                          <img alt="Card image cap" class="card-img-top img-fluid" src="{{pro.image.url}}"
+                            style="width: 30rem; height: 17rem;">
 
-                        <div class="card-body">
-                            <!-- <p><b>{{pro.type}}</b></p> -->
-                            <h5>Price:{{pro.price}}Rwf</h5>
-                            <hr>
-                            <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{pro.district}}
-                            </p>
-                            <div class="d-flex">
-                                <!-- <p class="card-text mr-4"><i class="fas fa-bed"></i> {{pro.beds}} bedrooms</p>
-                                <p class="card-text"><i class="fas fa-bath"></i> {{pro.baths}} baths</p> -->
+                        <div class="card-body text-center">
+                            <h6 class="card-title mb-0"
+                              style="text-transform: uppercase;color: #45ac8b;font-weight: bold;font-size: 15px;">
+                              Therapist Name:{{pro.name}}</h6>
+                            <div class="card-text text-back-50"
+                              style="text-transform: uppercase;color: rgb(150, 148, 148);font-weight: bold;font-size: 13px;">
+                              Price: {{pro.price}}Rwf
                             </div>
-                            <!-- <p>For {{pro.action}}</p>  -->
-                            <p>ID: {{pro.id}}</p>
+                
+                            <div class="card-text text-back-50"
+                              style="text-transform: uppercase;color: rgb(150, 148, 148);font-weight: bold;font-size: 13px;"><i
+                                class="fas fa-map-marker-alt"></i>
+                              {{pro.district}}
+                
+                            </div>
+                        </div>
                         </div>
                     </div>
                     {% endfor %}
                 </div>
                 {% else %}
+
+
                 <h5></h5>
                 {% endif %}
             </div>
@@ -99,7 +107,7 @@
                     </div>
                     <div class="modal-body">
                         {% if bookings %}
-                        <table class="table table-sm table-striped">
+                        <table class="table table-sm table-striped" style="width: 100%;">
                             <thead>
                                 <tr>
                                     <th scope="col">Name</th>
